@@ -1,6 +1,6 @@
-
-import Expenses from "./components/Expenses/Expenses";
- const App = () => {
+import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
+const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -24,11 +24,10 @@ import Expenses from "./components/Expenses/Expenses";
   ];
   return (
     <div>
-      <div className="expenses">
-        <Expenses items={expenses} />
-      </div>
+      <NewExpense />
+      <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
