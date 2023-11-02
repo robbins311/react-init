@@ -57,6 +57,12 @@ const ExpenseForm = (props) => {
   //   }
   // };
 
+  const closeHandler = (event) => {
+    event.preventDefault();
+    props.close(false);
+    // console.log(props.close);
+  };
+
   const submitHandler = (event) => {
     // as you know when you submit this context, prevent page reload
     event.preventDefault();
@@ -64,7 +70,7 @@ const ExpenseForm = (props) => {
     // stored 된 data들 객체로 관리ㅣ
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -112,6 +118,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={closeHandler}>Cancle</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
